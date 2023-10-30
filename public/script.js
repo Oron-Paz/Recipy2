@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (userMessage.trim() !== "") {
       // Clear previous responses
       dishName.innerHTML = "Processing...";
-
       try {
         const response = await fetch("/chat", {
           method: "POST",

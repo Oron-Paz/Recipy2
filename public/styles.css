@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+}
+
+.header {
+  background-image: url(../images/headerBack.jpg);
+  width: 100%; /* Full width */
+  height: 50vh; /* 50% of the viewport height */
+  background-size: cover; /* Scale the image to cover the entire header */
+  background-position: left; /* Align the background to the left */
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Ensure it's on top of other content */
+  display: flex; /* Use flexbox to align content vertically */
+  justify-content: center; /* Center horizontally */
+}
+.header img {
+  /* Adjust the size and positioning of the image */
+  width: 70px; /* Set the width of the image */
+  margin-top: 115px;
+  margin-right: 20%; /* Adjust the spacing between the image and text */
+  filter: invert(100%);
+}
+.recipyBig {
+  align-self: center; /* Center vertically within the header */
+  color: #FFF;
+  font-family:'Noto-Serif', sans-serif;
+  font-size: 85px;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute; /* Position this element within the header */
+  top: 50%; /* Move it halfway down */
+  left: 53%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
+}
+
+@font-face {
+  font-family: 'Noto-Serif'; /* The name you'll use in your CSS rules */
+  src: url('../fonts/NotoSerif-VariableFont_wdth\,wght.ttf') format('truetype');
+  /* Add more sources as needed for different formats */
+  font-weight: normal; /* or specify the font weight */
+  font-style: normal; /* or specify the font style */
+}
