@@ -1,29 +1,72 @@
+/* CSS for the navbar */
+.navbar {
+  padding-top: 5px;
+  background-color: transparent; /* Set the background to transparent */
+    position: absolute;
+    width: 100%;
+    z-index: 1; /* Ensure the navbar appears on top of the content */
+    overflow: hidden;
+}
+
+.navbar a {
+  
+  float: left;
+  color: white; /* Text color set to white */
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 25px;
+  font-family: 'Noto-Serif', sans-serif;
+  transition: text-decoration 0.3s, font-weight 0.3s;
+}
+
+/* Style the "Recipy" logo on the left */
+.navbar .logo {
+  float: left;
+  margin-left: 100px;
+  margin-top: 15px;
+  font-size: 24px;
+  color: white;
+  font-family: 'Noto-Serif', sans-serif;
+}
+
+.navbar .right-links {
+  float: right;
+  margin-right: 25px;
+}
+
+/* Style the individual links */
+.navbar a:hover {
+  text-decoration: underline; /* Underline the text on hover */
+  font-weight: bold; /* Make the text bold on hover */
+}
+
 body {
   margin: 0;
 }
 
-
-
 .header {
   background-image: url(../images/headerBack.jpg);
   width: 100%; /* Full width */
-  height: 50vh; /* 50% of the viewport height */
+  height: 45vh; /* 50% of the viewport height */
   background-size: cover; /* Scale the image to cover the entire header */
   background-position: left; /* Align the background to the left */
   position: relative;
   top: 0;
   left: 0;
-  z-index: 1; /* Ensure it's on top of other content */
+  z-index: 0; /* Ensure it's on top of other content */
   display: flex; /* Use flexbox to align content vertically */
   justify-content: center; /* Center horizontally */
 }
 .header img {
   /* Adjust the size and positioning of the image */
   width: 70px; /* Set the width of the image */
-  margin-top: 115px;
+  margin-top: 40px;
   margin-right: 20%; /* Adjust the spacing between the image and text */
   filter: invert(100%);
 }
+
 .recipyBig {
   align-self: center; /* Center vertically within the header */
   color: #FFF;
@@ -32,7 +75,7 @@ body {
   font-weight: 400;
   line-height: normal;
   position: absolute; /* Position this element within the header */
-  top: 50%; /* Move it halfway down */
+  top: 40%; /* Move it halfway down */
   left: 53%; /* Adjust the left position as needed */
   transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
 }
@@ -45,22 +88,26 @@ body {
 }
 
 .userInput {
-  margin-left: 34%;
+  margin-left: 30%;
   font-size: 25px;
   background-color: #ccc;
   border-radius: 5px;
-  border:none;
+  border: 2px solid transparent;
   padding: 17px; /* Match the same padding as .createBtn */
-  padding-right: 50px;
-  padding-left: 70px;
+  width: 400px;
+  
+  padding-left: 28px;
+  transition: border 0.3s;
 }
 
 .userInput input::placeholder {
   color: #555;
 }
 
-.userInput input:focus {
-  color: orange;
+textarea:focus, input:focus{
+  outline: none;
+  border: 2px solid rgb(112, 111, 111);
+  color: rgb(46, 46, 46);
 }
 
 .createBtn {
@@ -68,10 +115,10 @@ body {
   background-color: #ccc;
   border: none;
   border-radius: 5px;
-  padding: 19px; /* Match the same padding as .userInput */
+  padding: 22px; /* Match the same padding as .userInput */
   font-size: 20px;
   color: #555;
-  transition: background-color 0.3s; /* Add a transition effect for hover */
+  transition: background-color 0.3s, color 0.3s; /* Add a transition effect for hover */
   cursor: pointer; /* Change cursor on hover */
 }
 

@@ -53,3 +53,38 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 });
+
+
+const words = ['Whats in your fridge?', 'Name some ingridients:', 'What are you hungry for?', 'Whats your favorite combo?']; // Array of random words
+const typeInterval = 70; // Interval between typing each character (in milliseconds)
+
+let wordIndex = 0;
+let charIndex = 0;
+
+function autoTypePlaceholder() {
+    if (charIndex < words[wordIndex].length) {
+        const currentPlaceholder = userInput.getAttribute('placeholder');
+        userInput.setAttribute('placeholder', currentPlaceholder + words[wordIndex][charIndex]);
+        charIndex++;
+        setTimeout(autoTypePlaceholder, typeInterval);
+    } else {
+        setTimeout(erasePlaceholder, 1000); // Wait for 1 second before erasing
+    }
+}
+
+function erasePlaceholder() {
+    if (charIndex > 0) {
+        const currentPlaceholder = userInput.getAttribute('placeholder');
+        const newPlaceholder = currentPlaceholder.slice(0, -1);
+        userInput.setAttribute('placeholder', newPlaceholder);
+        charIndex--;
+        setTimeout(erasePlaceholder, typeInterval/1.5);
+    } else {
+        wordIndex = (wordIndex + 1) % words.length; // Cycle through words
+        
+        setTimeout(autoTypePlaceholder, 750);
+    }
+}
+
+// Start the auto-typing effect when the page loads
+autoTypePlaceholder();

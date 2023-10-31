@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.post('/chat', async (req, res) => {
   const userMessage = req.body.userMessage;
-  const system_prompt = `If the user input is not food related or is not something that can be turned inyo a meal simply fill all the strings for the JSON with "undefined". Otherwise respond to the user with a meal with the ingridients that the user inputs and its description in the following parsable JSON format and DONT leave anything undefined:
+  const system_prompt = `If the user input is not food related or is not something that can be turned inyo a meal simply fill all the strings for the JSON with "undefined". Otherwise respond to the user with a meal with the ingridients that the user inputs, you do not have to use all ingridients. Write its description in the following parsable JSON format and DONT leave anything undefined:
                   {
                     dishName: "Name of the dish",
                     dishDescription: "A 2-3 sentence description of the dish/its history anything related",
