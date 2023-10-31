@@ -25,7 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.outputAI').classList.add('outputAIAfterCreation');
     if (userMessage.trim() !== "") {
       // Clear previous responses
-      dishName.innerHTML = "Processing...";
+      dishName.classList.add('processingInput');
+      dishName.innerHTML = "Processing";
+      for (let i = 0; i < 3; i++) {
+        const dots = document.createElement('span');
+        dots.classList.add('dot');
+        dots.textContent = '.';
+        dishName.appendChild(dots);
+    }
+
       try {
         const response = await fetch("/chat", {
           method: "POST",
@@ -36,17 +44,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         if (response.ok) {
+          dishName.classList.remove('processingInput');
           const data = await response.json();
           if(data.dishName==='undefined' ||data.dishDescription ==='undefined' || data.dishIngridients==='undefined' || dishRecipe==='undefined' ){
             dishName.innerHTML = "Please enter food ingridients or food related input"
           }
           else{
+
           dishName.innerHTML = data.dishName;
           dishDescription.innerHTML = data.dishDescription;
           dishIngridients.innerHTML = data.dishIngridients;
           dishRecipe.innerHTML = data.dishRecipe;
           }
         } else {
+          dishName.classList.remove('processingInput');
           dishName.innerHTML = "Error: Failed to fetch response";
         }
       } catch (error) {
@@ -112,3 +123,15 @@ autoTypePlaceholder();
 //--------------------------------------------------------------------------------//
 //Other cooky stuff
 //--------------------------------------------------------------------------------//
+
+//change the color of the navbar->
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 0) {
+      navbar.classList.add('orange');
+  } else {
+      navbar.classList.remove('orange');
+  }
+});
+
+  

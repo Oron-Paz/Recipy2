@@ -5,7 +5,7 @@
     <link rel="stylesheet"  href="styles.css">
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" id="navbar">
       <div class="logo">Recipy</div>
       <div class="right-links">
         <a href="#">Home</a>
@@ -22,10 +22,31 @@
       <button class ="createBtn" id="chatButton">Create!</button>
     </div>
     <div class="outputAI">
-      <p id="dishName"></p>
-      <p id="dishDescription"></p>
-      <p id="dishIngridients"></p>
-      <p id="dishRecipe"></p>
+      <p id="dishName" class="dishName"></p>
+      <p id="dishDescription" class="dishDescription"></p>
+      <p id="dishIngridients" class="dishIngridients"></p>
+      <p id="dishRecipe" class="dishRecipe"></p>
+    </div>
+    <div class="explanationBox">
+      <h2>How It Works</h2>
+        <ol>
+            <li>
+                <p><strong>Tell Us What's in Your Kitchen</strong></p>
+                <p>Begin by sharing what you've got on hand or what's on your mind. Just type in the ingredients or dish you have in mind, and we'll do the rest.</p>
+            </li>
+            <li>
+                <p><strong>We Get Your Idea</strong></p>
+                <p>Our friendly AI gets to work and understands your request, just like a helpful kitchen assistant. It translates your words into a clear recipe hunt.</p>
+            </li>
+            <li>
+                <p><strong>Recipe Discovery, Made Easy</strong></p>
+                <p>No need to sift through countless cookbooks or websites. Recipy takes a quick peek in its recipe treasure chest and pulls out the most fitting options.</p>
+            </li>
+            <li>
+                <p><strong>Recipe Ideas, Served Fresh</strong></p>
+                <p>Voila! In a snap, we present you with a handful of personalized recipes that fit your description. Every recipe comes with step-by-step instructions, so you can start cooking with confidence.</p>
+            </li>
+        </ol>
     </div>
     
     <script src="script.js"></script>
