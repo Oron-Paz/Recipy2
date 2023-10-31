@@ -1,4 +1,7 @@
 // script.js
+//--------------------------------------------------------------------------------//
+//THIS IS THE COMPLEX EXPRESS/OPENAI API STUFF IDK BUT IT WORKS SO DONT TOUCH UNLESS NEED//
+//--------------------------------------------------------------------------------//
 
 document.addEventListener("DOMContentLoaded", function() {
   const userInput = document.getElementById("userInput");
@@ -9,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const dishRecipe = document.getElementById("dishRecipe");
 
 
-  chatButton.addEventListener("click", createRecipeFunc);
+  chatButton.addEventListener("click", createRecipeFunc, );
   userInput.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
       createRecipeFunc();
@@ -19,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   async function createRecipeFunc() {
     const userMessage = userInput.value;
-
+    document.querySelector('.outputAI').classList.add('outputAIAfterCreation');
     if (userMessage.trim() !== "") {
       // Clear previous responses
       dishName.innerHTML = "Processing...";
@@ -54,7 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 });
 
-
+//--------------------------------------------------------------------------------//
+//Below is the autoTyper animation thing also dont touch cus it works :)
+//--------------------------------------------------------------------------------//
 
 const userInput = document.getElementById('userInput');
 const words = ['Whats in your fridge?', 'Name some ingridients:', 'What are you hungry for?', 'Whats your favorite combo?']; // Array of random words
@@ -103,3 +108,7 @@ userInput.addEventListener('blur', function () {
 
 // Start the auto-typing effect when the page loads
 autoTypePlaceholder();
+
+//--------------------------------------------------------------------------------//
+//Other cooky stuff
+//--------------------------------------------------------------------------------//

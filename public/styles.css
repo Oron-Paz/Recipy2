@@ -1,4 +1,4 @@
-/* CSS for the navbar */
+/*--------------------------NavBar--------------------------------------*/
 .navbar {
   padding-top: 5px;
   background-color: transparent; /* Set the background to transparent */
@@ -41,7 +41,7 @@
   text-decoration: underline; /* Underline the text on hover */
   font-weight: bold; /* Make the text bold on hover */
 }
-
+/*--------------------------Header+body--------------------------------------*/
 body {
   margin: 0;
 }
@@ -80,11 +80,12 @@ body {
   transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
 }
 
-
+/*--------------------------userInput + createBtn--------------------------------------*/
 .inputBox {
   margin-top: 25px;
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .userInput {
@@ -95,8 +96,8 @@ body {
   border: 2px solid transparent;
   padding: 17px; /* Match the same padding as .createBtn */
   width: 400px;
-  
-  padding-left: 28px;
+  font-family:'Noto-Serif', sans-serif;
+  padding-left: 25px;
   transition: border 0.3s;
 }
 
@@ -111,6 +112,7 @@ textarea:focus, input:focus{
 }
 
 .createBtn {
+  font-family:'Noto-Serif', sans-serif;
   margin-left: 20px;
   background-color: #ccc;
   border: none;
@@ -133,12 +135,27 @@ textarea:focus, input:focus{
 }
 
 
+/*--------------------------ActualRecipe--------------------------------------*/
+
+.outputAIAfterCreation {
+  margin-top: 100px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 90%; /* Almost the whole width of the screen */
+  max-width: 800px; /* Limit the maximum width for better readability on large screens */
+  margin: 0 auto; /* Center the container horizontally */
+}
 
 
 
 
 
-
+/*--------------------------Fonts--------------------------------------*/
 @font-face {
   font-family: 'Noto-Serif'; /* The name you'll use in your CSS rules */
   src: url('../fonts/NotoSerif-VariableFont_wdth\,wght.ttf') format('truetype');
