@@ -2,6 +2,8 @@ body {
   margin: 0;
 }
 
+
+
 .header {
   background-image: url(../images/headerBack.jpg);
   width: 100%; /* Full width */
@@ -34,6 +36,61 @@ body {
   left: 53%; /* Adjust the left position as needed */
   transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
 }
+
+
+.inputBox {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.userInput {
+  margin-left: 34%;
+  font-size: 25px;
+  background-color: #ccc;
+  border-radius: 5px;
+  border:none;
+  padding: 17px; /* Match the same padding as .createBtn */
+  padding-right: 50px;
+  padding-left: 70px;
+}
+
+.userInput input::placeholder {
+  color: #555;
+}
+
+.userInput input:focus {
+  color: orange;
+}
+
+.createBtn {
+  margin-left: 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  padding: 19px; /* Match the same padding as .userInput */
+  font-size: 20px;
+  color: #555;
+  transition: background-color 0.3s; /* Add a transition effect for hover */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.createBtn:hover {
+    background-color: orange; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+.createBtn:active {
+    background-color: rgb(237, 130, 0); /* Change background color on click */
+    color: #fff; /* Change text color on click */
+}
+
+
+
+
+
+
+
 
 @font-face {
   font-family: 'Noto-Serif'; /* The name you'll use in your CSS rules */

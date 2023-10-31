@@ -5,16 +5,23 @@
     <link rel="stylesheet"  href="styles.css">
 </head>
 <body>
+    <div class="navbar">
+
+    </div>
     <div class="header">
       <img src="../images/chefHat.svg" alt="Your Image">
       <h1 class="recipyBig">Recipy</h1>
     </div>
-    <input type="text" id="userInput" placeholder="Enter your message">
-      <button id="chatButton">Create!</button>
-    <p id="dishName"></p>
-    <p id="dishDescription"></p>
-    <p id="dishIngridients"></p>
-    <p id="dishRecipe"></p>
+    <div class="inputBox">
+      <input type="text" class ="userInput" id="userInput" placeholder="Whats in your fridge">
+      <button class ="createBtn" id="chatButton">Create!</button>
+    </div>
+    <div class="outputAI">
+      <p id="dishName"></p>
+      <p id="dishDescription"></p>
+      <p id="dishIngridients"></p>
+      <p id="dishRecipe"></p>
+    </div>
     
     <script src="script.js"></script>
 </body>

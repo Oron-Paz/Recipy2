@@ -34,10 +34,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (response.ok) {
           const data = await response.json();
+          if(data.dishName==='undefined' ||data.dishDescription ==='undefined' || data.dishIngridients==='undefined' || dishRecipe==='undefined' ){
+            dishName.innerHTML = "Please enter food ingridients or food related input"
+          }
+          else{
           dishName.innerHTML = data.dishName;
           dishDescription.innerHTML = data.dishDescription;
           dishIngridients.innerHTML = data.dishIngridients;
           dishRecipe.innerHTML = data.dishRecipe;
+          }
         } else {
           dishName.innerHTML = "Error: Failed to fetch response";
         }
