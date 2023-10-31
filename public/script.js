@@ -55,20 +55,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+const userInput = document.getElementById('userInput');
 const words = ['Whats in your fridge?', 'Name some ingridients:', 'What are you hungry for?', 'Whats your favorite combo?']; // Array of random words
 const typeInterval = 70; // Interval between typing each character (in milliseconds)
 
 let wordIndex = 0;
 let charIndex = 0;
+let animationTimeout;
 
 function autoTypePlaceholder() {
     if (charIndex < words[wordIndex].length) {
         const currentPlaceholder = userInput.getAttribute('placeholder');
         userInput.setAttribute('placeholder', currentPlaceholder + words[wordIndex][charIndex]);
         charIndex++;
-        setTimeout(autoTypePlaceholder, typeInterval);
+        animationTimeout = setTimeout(autoTypePlaceholder, typeInterval);
     } else {
-        setTimeout(erasePlaceholder, 1000); // Wait for 1 second before erasing
+        animationTimeout = setTimeout(erasePlaceholder, 1000); // Wait for 1 second before erasing
     }
 }
 
@@ -78,13 +81,25 @@ function erasePlaceholder() {
         const newPlaceholder = currentPlaceholder.slice(0, -1);
         userInput.setAttribute('placeholder', newPlaceholder);
         charIndex--;
-        setTimeout(erasePlaceholder, typeInterval/1.5);
+        animationTimeout = setTimeout(erasePlaceholder, typeInterval / 1.5);
     } else {
         wordIndex = (wordIndex + 1) % words.length; // Cycle through words
-        
-        setTimeout(autoTypePlaceholder, 750);
+        animationTimeout = setTimeout(autoTypePlaceholder, 750);
     }
 }
+
+// Clear placeholder on input focus and stop animation
+userInput.addEventListener('focus', function () {
+    userInput.setAttribute('placeholder', '');
+    clearTimeout(animationTimeout); // Stop the animation
+});
+
+// Resume animation on input blur (when focus is lost)
+userInput.addEventListener('blur', function () {
+    charIndex = 0;
+    wordIndex = (wordIndex + 1) % words.length;
+    autoTypePlaceholder(); // Resume the animation
+});
 
 // Start the auto-typing effect when the page loads
 autoTypePlaceholder();
