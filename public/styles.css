@@ -54,7 +54,7 @@ body {
 /*--------------------------Header+body--------------------------------------*/
 /*-------------------------------------------------------------------------------------*/
 
-.header {
+.header,.headerAbout {
   background-image: url(../images/headerBack.jpg);
   width: 100%; /* Full width */
   height: 45vh; /* 50% of the viewport height */
@@ -68,6 +68,11 @@ body {
   justify-content: center; /* Center horizontally */
   margin-bottom: 30px;
 }
+
+.headerAbout{
+  height: 35vh; /* 50% of the viewport height */
+}
+
 .header img {
   /* Adjust the size and positioning of the image */
   width: 70px; /* Set the width of the image */
@@ -76,7 +81,7 @@ body {
   filter: invert(100%);
 }
 
-.recipyBig {
+.recipyBig,.aboutTitle {
   align-self: center; /* Center vertically within the header */
   color: #FFF;
   font-family:'Noto-Serif', sans-serif;
@@ -87,6 +92,13 @@ body {
   top: 40%; /* Move it halfway down */
   left: 53%; /* Adjust the left position as needed */
   transform: translate(-50%, -50%); /* Center text both horizontally and vertically */
+}
+
+.aboutTitle{
+  top: 46%;
+  font-size: 50px;
+  left: 48%;
+  
 }
 /*-------------------------------------------------------------------------------------*/
 /*--------------------------userInput + createBtn--------------------------------------*/
@@ -164,7 +176,7 @@ body {
 }
 
 /* Styles for the output AI container */
-.outputAIAfterCreation {
+.outputAIAfterCreation, .aboutTextBox {
   margin-top: 100px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -202,7 +214,12 @@ body {
   margin-bottom: 10px;
 }
 
-
+.aboutTextDescription{
+  font-size: 20px;
+}
+.aboutTextBox h2{
+  font-size:20px;
+}
 
 /*-------------------------------------------------------------------------------------*/
 /*--------------------------explanationSection--------------------------------------*/
