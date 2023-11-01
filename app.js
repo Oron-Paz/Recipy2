@@ -1,6 +1,6 @@
 const { config } = require('dotenv');
 config();
-const fs = require('fs');
+const fs = require('node:fs');
 const OpenAI = require("openai");
 const express = require('express');
 const path = require('path');
