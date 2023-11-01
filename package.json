@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
     "dev": "node app.js",
     "start": "nodemon app.js"
   },
