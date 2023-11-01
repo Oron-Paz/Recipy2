@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         dots.textContent = '.';
         dishName.appendChild(dots);
     }
+    dishName.textContent += `\t (this may take a minute or two)`
 
       try {
         const response = await fetch("/chat", {
