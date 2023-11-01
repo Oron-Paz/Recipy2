@@ -15,16 +15,16 @@ const openAi = new OpenAI({
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use('/images', express.static(path.join(__dirname, '../public/images')));
+app.use('/fonts', express.static(path.join(__dirname, '../public/fonts')));
 
 // Use bodyParser to parse JSON and URL-encoded data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/public', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.post('/chat', async (req, res) => {
