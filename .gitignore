@@ -12,7 +12,7 @@ pids/
 *.pid.lock
 
 # Environment variables
-.env   # Add this line to ignore .env
+.env 
 .env.local
 .env.development
 .env.test
