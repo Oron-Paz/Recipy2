@@ -20,7 +20,7 @@ app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
+app.get('/public', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
