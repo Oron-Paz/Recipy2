@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     dishName.textContent += `\t (this may take a minute or two)`
       try {
-        const response = await fetch("/chat", {
+        const response = await fetch("/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
