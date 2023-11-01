@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   async function createRecipeFunc() {
     const userMessage = userInput.value;
-    document.querySelector('.outputAI').classList.add('outputAIAfterCreation');
     if (userMessage.trim() !== "") {
+      document.querySelector('.outputAI').classList.add('outputAIAfterCreation');
       // Clear previous responses
       dishName.classList.add('processingInput');
       dishName.innerHTML = "Processing";
@@ -127,11 +127,11 @@ autoTypePlaceholder();
 //change the color of the navbar->
 window.addEventListener('scroll', function() {
   const navbar = document.getElementById('navbar');
-  if (window.scrollY > 0) {
+  if (window.scrollY > 160) {
       navbar.classList.add('orange');
   } else {
       navbar.classList.remove('orange');
   }
 });
-
+// Prevent scrolling beyond the top of the website
   

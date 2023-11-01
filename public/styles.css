@@ -1,4 +1,6 @@
+
 body {
+  overscroll-behavior: none;
   margin: 0;
 }
 /*-------------------------------------------------------------------------------------*/
@@ -32,8 +34,7 @@ body {
 /* Style the "Recipy" logo on the left */
 .navbar .logo {
   float: left;
-  margin-left: 100px;
-  margin-top: 15px;
+  margin-left: 30px;
   font-size: 24px;
   color: white;
   font-family: 'Noto-Serif', sans-serif;
@@ -65,6 +66,7 @@ body {
   z-index: 0; /* Ensure it's on top of other content */
   display: flex; /* Use flexbox to align content vertically */
   justify-content: center; /* Center horizontally */
+  margin-bottom: 30px;
 }
 .header img {
   /* Adjust the size and positioning of the image */
@@ -90,57 +92,52 @@ body {
 /*--------------------------userInput + createBtn--------------------------------------*/
 /*-------------------------------------------------------------------------------------*/
 .inputBox {
-  margin-top: 25px;
+  margin-top: 33px;
   display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+  justify-content: center; /* Center the children horizontally */
+  align-items: center; /* Center the children vertically */
+  margin-bottom: 40px;
 }
 
 .userInput {
-  margin-left: 30%;
   font-size: 25px;
   background-color: #ccc;
   border-radius: 5px;
   border: 2px solid transparent;
-  padding: 17px; /* Match the same padding as .createBtn */
-  width: 400px;
-  font-family:'Noto-Serif', sans-serif;
+  padding: 17px;
+  width: calc(50% - 100px); /* Adjust the width as needed */
+  font-family: 'Noto-Serif', sans-serif;
   padding-left: 25px;
   transition: border 0.3s;
+  margin-right: 20px;
 }
 
 .userInput input::placeholder {
   color: #555;
 }
 
-textarea:focus, input:focus{
-  outline: none;
-  border: 2px solid rgb(112, 111, 111);
-  color: rgb(46, 46, 46);
-}
-
 .createBtn {
-  font-family:'Noto-Serif', sans-serif;
-  margin-left: 20px;
+  font-family: 'Noto-Serif', sans-serif;
   background-color: #ccc;
   border: none;
   border-radius: 5px;
-  padding: 22px; /* Match the same padding as .userInput */
+  padding: 22px;
   font-size: 20px;
   color: #555;
-  transition: background-color 0.3s, color 0.3s; /* Add a transition effect for hover */
-  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 .createBtn:hover {
-    background-color: orange; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
+  background-color: #ff6600;
+  color: #fff;
 }
 
 .createBtn:active {
-    background-color: rgb(237, 130, 0); /* Change background color on click */
-    color: #fff; /* Change text color on click */
+  background-color: #ff6600;
+  color: #fff;
 }
+
 
 /*-------------------------------------------------------------------------------------*/
 /*--------------------------ActualRecipe--------------------------------------*/
@@ -166,86 +163,88 @@ textarea:focus, input:focus{
   animation-delay: 1s; /* Delay the animation of the third dot */
 }
 
+/* Styles for the output AI container */
 .outputAIAfterCreation {
   margin-top: 100px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
-  width: 90%; /* Almost the whole width of the screen */
-  max-width: 800px; /* Limit the maximum width for better readability on large screens */
-  margin: 0 auto; /* Center the container horizontally */
-  margin-bottom: 30px;
+  width: 70%;
+  
+  margin: 0 auto;
+  font-family: 'Noto-Serif', sans-serif;
 }
 
-.dishName{
-
+/* Styles for the dish name */
+.dishName {
+  font-size: 24px; /* Larger font size */
+  color: #333; /* Darker color */
+  margin-bottom: 0;
 }
-.dishDescription{
 
+/* Styles for the dish description */
+.dishDescription {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
 }
-.dishIngridients{
 
+.dishDescription::first-line {
+  text-indent: 20px; /* Indent only the first line */
 }
-.dishRecipe{
 
+/* Styles for dish ingredients and recipe */
+.dishIngridients, .dishRecipe {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
+
 
 
 /*-------------------------------------------------------------------------------------*/
 /*--------------------------explanationSection--------------------------------------*/
 /*-------------------------------------------------------------------------------------*/
 
-/* Style the how-it-works section */
-.how-it-works {
-  background-color: #f8f8f8;
+/* Your existing styles */
+/* Your existing styles */
+/* Your existing styles */
+.explanationBox {
+  font-family: 'Noto-Serif', sans-serif;
+  background-color: #fff;
   padding: 20px;
+  margin: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
 }
 
-/* Style the section title */
-.how-it-works h2 {
-  font-size: 24px;
+.explanationBox h2 {
   color: #333;
+  border-bottom: 2px solid #ff6600; 
+
 }
 
-/* Style the ordered list */
-.how-it-works ol {
+.explanationBox p {
+  color: #666;
+  margin-top: 20px;
+}
+
+.explanationBox ul {
   list-style-type: none;
-  counter-reset: number;
-  margin: 0;
-  padding: 0;
 }
 
-/* Style list items (steps) */
-.how-it-works li {
-  font-size: 18px;
-  margin-bottom: 20px;
+/* Style for nested unordered lists (bulleted lists) */
+.explanationBox ul.nested-list {
+  list-style-type: disc;
+  margin-left: 20px; /* Adjust the indentation as needed */
 }
 
-/* Style the step number */
-.how-it-works li::before {
-  counter-increment: number;
-  content: counter(number);
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  text-align: center;
-  background-color: #ff6600; /* Orange color for step numbers */
-  color: #fff;
-  border-radius: 50%;
-  margin-right: 10px;
-  font-weight: bold;
-}
 
-/* Style the step description */
-.how-it-works p {
-  font-size: 16px;
-  color: #555;
-}
+
 
 
 
