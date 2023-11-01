@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         dots.textContent = '.';
         dishName.appendChild(dots);
     }
-    dishName.textContent += `\t (this may take a minute or two)`
+    dishName.textContent += `\t (this may take a minute)`
       try {
         const response = await fetch("/api", {
           method: "POST",
