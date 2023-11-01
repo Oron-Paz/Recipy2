@@ -4,7 +4,10 @@ const OpenAI = require("openai");
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser'); // Add bodyParser middleware
+const cors = require('cors'); // Require the cors middleware
+
 const app = express();
+app.use(cors());
 
 const openAi = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -24,7 +27,7 @@ app.get('/public', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.post('/', async (req, res) => {
+app.post('/chat', async (req, res) => {
   const userMessage = req.body.userMessage;
   const system_prompt = `If the user input is not food related or is not something that can be turned into a meal then simply fill all the strings for the JSON with "undefined". Otherwise DONT leave anything undefined, respond to the user with a meal with the ingridients and amounts that the user inputs, you do not have to use all ingridients if they dont make sense in a dish. Write its description in the following parsable JSON format:
                   {
