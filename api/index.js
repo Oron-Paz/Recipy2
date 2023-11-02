@@ -7,7 +7,7 @@ const bodyParser = require('body-parser'); // Add bodyParser middleware
 const cors = require('cors'); // Require the cors middleware
 
 const app = express();
-app.use(cors());
+app.use(express.static('public'));
 
 const openAi = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/public', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../public/about.html'));
 });
 
 app.post('/api', async (req, res) => {

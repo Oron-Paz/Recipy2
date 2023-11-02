@@ -15,7 +15,7 @@ body {
   z-index: 1; /* Ensure the navbar appears on top of the content */
   overflow: hidden;
 }
-.navbar.orange {
+.navbar.orange{
   background-color: #ff6600;
   color: #fff; /* Change text color to white */
 }
@@ -176,7 +176,7 @@ body {
 }
 
 /* Styles for the output AI container */
-.outputAIAfterCreation, .aboutTextBox {
+.outputAIAfterCreation, .aboutRecipyTextBox {
   margin-top: 100px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -217,7 +217,7 @@ body {
 .aboutTextDescription{
   font-size: 20px;
 }
-.aboutTextBox h2{
+.aboutRecipyTextBox h2{
   font-size:20px;
 }
 

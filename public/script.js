@@ -133,13 +133,4 @@ window.addEventListener('scroll', function() {
       navbar.classList.remove('orange');
   }
 });
-window.addEventListener('scroll', function() {
-  const navbar = document.getElementById('navbar');
-  if (window.scrollY > 160) {
-      navbar.classList.add('orange');
-  } else {
-      navbar.classList.remove('orange');
-  }
-});
-// Prevent scrolling beyond the top of the website
   
