@@ -5,7 +5,6 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser'); // Add bodyParser middleware
 const cors = require('cors'); // Require the cors middleware
-
 const app = express();
 app.use(express.static('public'));
 
@@ -14,6 +13,7 @@ const openAi = new OpenAI({
 });
 
 const port = process.env.PORT || 3000;
+
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/images', express.static(path.join(__dirname, '../public/images')));
