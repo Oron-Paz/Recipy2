@@ -1,0 +1,40 @@
+<!-- public/recipes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+</head>
+<body>
+  <h1>My Recipes</h1>
+
+  <!-- Form for adding a recipe -->
+  <form id="recipe-form">
+    <div>
+      <label for="dishName">Dish Name</label>
+      <input type="text" id="dishName" name="dishName" required>
+    </div>
+    <div>
+      <label for="dishDescription">Description</label>
+      <input type="text" id="dishDescription" name="dishDescription" required>
+    </div>
+    <div>
+      <label for="dishIngredients">Ingredients</label>
+      <textarea id="dishIngredients" name="dishIngredients" required></textarea>
+    </div>
+    <div>
+      <label for="dishRecipe">Recipe</label>
+      <textarea id="dishRecipe" name="dishRecipe" required></textarea>
+    </div>
+    <button type="submit">Add Recipe</button>
+  </form>
+
+  <!-- List of saved recipes -->
+  <div id="recipe-list">
+    <!-- Recipes will be displayed here dynamically using JavaScript -->
+  </div>
+
+  <script src="recipes.js"></script>
+</body>
+</html>
