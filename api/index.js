@@ -7,13 +7,11 @@ const bodyParser = require('body-parser'); // Add bodyParser middleware
 const cors = require('cors'); // Require the cors middleware
 const app = express();
 app.use(express.static('public'));
+const port = process.env.PORT || 3000;
 
 const openAi = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-const port = process.env.PORT || 3000;
-
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/images', express.static(path.join(__dirname, '../public/images')));
