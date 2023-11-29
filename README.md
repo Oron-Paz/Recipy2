@@ -1,5 +1,5 @@
 # Recipy2
-##IMPORTANT:
+## IMPORTANT:
 <p>Vercel has a 10 sec limit on API calls thus deplpyment doesnt work unless the project is ran locally. Read more about it below</p>
 
 ## About
